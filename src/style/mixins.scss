@@ -1,0 +1,101 @@
+@mixin welcome-buttons(){
+    width: 92.5%;
+    height: 10vh;
+    background-color: $red-brown;
+    color: $white;
+    border: border($size: 4px, $color: $dark-brown);
+    border-radius: $border-radius;
+    @include font-family($western: true);
+    font-size: 3.5em;
+    cursor: pointer;
+    transition: 1s;
+  }
+    
+  // Fonts Mixins
+  @mixin font-family($thin: false, $western: false, $block: false, $default: false){
+      @if $default != false {
+          font-family: cursive;
+          font-weight: 100;
+          letter-spacing: 1px;
+      }
+      @if $thin != false {
+          font-family: 'Arima Madurai', cursive;
+          letter-spacing: 1px;
+          font-weight: 100;
+      }
+      @if $western != false {
+          font-family: 'Rye', cursive;
+          letter-spacing: 2px;
+          font-weight: 100;
+      }
+      @if $block != false {
+          font-family: 'Abril Fatface', cursive;
+          letter-spacing: 3px;
+      }
+  }
+     
+  // Mixins
+  @mixin flexbox-container($justify-content: false, $flex: false, $flex-direction: false, $align-items: false,
+        $flex-wrap: false, $flex-flow: false, $align-content: false, $inline: false){
+    @if $inline == false{
+      display: flex;
+    }
+    @if $inline != false {
+      display: $inline;
+    }
+    @if $justify-content != false {
+      justify-content: $justify-content;
+    }
+    @if $flex != false {
+      flex: $flex;
+    }
+    @if $flex-direction != false {
+      flex-direction: $flex-direction;
+    }
+    @if $align-items != false {
+      align-items: $align-items;
+    }
+    @if $flex-wrap != false {
+      flex-wrap: $flex-wrap;
+    }
+    @if $flex-flow != false {
+      flex-flow: $flex-flow;
+    }
+    @if $align-content != false {
+      align-content: $align-content;
+    }
+  }
+  @mixin flexbox-item($order: false, $flex-grow: false, $flex-shrink: false,
+          $flex-basis: false, $flex: false, $align-self: false){
+    @if $order != false {
+      order: $order;
+    }
+    @if $flex-grow != false {
+      flex-grow: $flex-grow;
+    }
+    @if $flex-shrink!= false {
+      flex-shrink: $flex-shrink;
+    }
+    @if $flex-basis != false {
+      flex-basis: $flex-basis;
+    }
+    @if $flex != false {
+      flex: $flex;
+    }
+    @if $align-self != false {
+      align-self: $align-self;
+    }
+  }
+  @function border($size: false, $style: false, $color: false){
+    @if $size == false{
+      $size: 1px;
+    }
+    @if $style == false{
+      $style: solid
+    }
+    @if $color == false{
+      $color: black
+    }
+    $border: $size $style $color;
+    @return $border;
+  }

@@ -1,0 +1,16 @@
+@import './mixins.scss';
+@import './vars.scss';
+
+.game-screen-wrapper{
+    width: 85vw;
+    height: 85vh;
+    margin-top: 5vh;
+    padding: 10px;
+    border: border($size: 3px, $color: $dark-brown);
+    border-radius: $border-radius;
+    box-shadow: $box-shadow-container;
+    background-image: url(../../static/assets/img/desert_back_ground.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
