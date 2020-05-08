@@ -1,0 +1,23 @@
+@import './mixins.scss';
+@import './vars.scss';
+
+.change-level-wrapper {
+    width: 45vw;
+    margin: 15vh 0 0 37vw;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 5vh;
+    align-items: center;
+}
+.change-level-wrapper > h2 {
+    @include font-family($western: true);
+    font-size: 4em;
+    text-shadow: $font-shadow;
+    color: $dark-brown;
+    text-align: center;
+    text-transform: capitalize;
+}
+.level-btn-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

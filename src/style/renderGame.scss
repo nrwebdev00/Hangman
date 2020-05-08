@@ -1,0 +1,59 @@
+@import './mixins.scss';
+@import './vars.scss';
+
+.main-game-view{
+    width: 45vw;
+    height: 52vh;
+    margin-left: 37vw;
+}
+.main-game-view > #gallows > img {
+    margin: 5vh 0 0 5vw;
+}
+#word-to-guess {
+    width: 90%;
+    height: 7vh;
+    margin: 1vh 0 0 5vh;
+}
+#word-to-guess {
+    @include flexbox-container($justify-content: space-around, $align-items: center);
+    margin-top: 8vh;
+}
+.not-guessed-letter {
+    max-width: 4vw;
+    width: 100%;
+    border-bottom: border($size: 2px, $color: $dark-brown);
+    margin-right: 2px;
+}
+.guessed-letter {
+    @include font-family($western: true);
+    font-size: 3.0em;
+    text-transform: uppercase;
+    border-bottom: border($size: 2px, $color: $dark-brown);
+}
+
+
+
+.action-letters{
+    width: 45vw;
+    height: 22vh;
+    margin: 3vh 0 0 37vw; 
+}
+.action-letters{
+    height: 17vh;
+    width: 55%;
+    margin: 1vh 0 0 42%;
+    @include flexbox-container($flex-wrap: wrap, $justify-content: space-around );
+}
+.letters-guess {
+    height: 3vh;
+    width: 12%;
+    @include font-family($western: true);
+    text-transform: capitalize;
+    font-size: 1.55em;
+    background-color: $med-brown;
+    color: $dark-brown;
+    border: border($size: 2px, $color: $dark-brown);
+    box-shadow: $btn-shadow;
+    border-radius: $border-radius;
+    cursor: pointer;
+}

@@ -1,0 +1,47 @@
+@import './mixins.scss';
+@import './vars.scss';
+
+.enter-name{
+    @include flexbox-container($justify-content: center, $align-items: center);
+}
+
+#players-name-enter{
+    width: 45vw;
+    margin: 15vh 0 0 30vw;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+}
+.player-name-label-wrapper{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    height: 12.5vh;
+}
+.player-name-label {
+    @include font-family($western: true);
+    font-size: 4em;
+    color: $dark-brown;
+}
+.player-name-input-wrapper > input {
+    width: 90%;
+    height: 7vh;
+    border: border($size: 4px, $color: $dark-brown);
+    border-radius: $border-radius;
+    padding: 4px 4px 4px 10px;
+    font-size: 3.0em;
+    @include font-family($block: true);
+}
+.player-name-btn-wrapper > button {
+    @include welcome-buttons();
+}
+.player-name-btn-wrapper > button:hover {
+    color: $dark-brown;
+}
+.error-message {
+    @include font-family($block: true);
+    font-size: 2.5em;
+    color: $red-brown;
+    text-align: center;
+    text-transform: capitalize;
+}

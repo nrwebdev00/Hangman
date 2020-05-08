@@ -21,6 +21,12 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-tap-highlight-color: transparent;
 }
+.hidden{
+    display: none;
+}
 .app{
     @include flexbox-container($justify-content: center, $align-items: center);
+}
+.btn{
+    @include welcome-buttons();
 }

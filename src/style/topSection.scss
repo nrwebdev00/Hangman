@@ -1,0 +1,43 @@
+@import './mixins.scss';
+@import './vars.scss';
+
+.top-section{
+    @include flexbox-container($justify-content: space-between, $align-items: center);
+    padding: 2vh 2vw 0 2vw;
+}
+.top-left{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    @include font-family($western: true);
+    font-size: 2.0em;
+    text-align: center;
+    color: $dark-brown;
+    text-shadow: $font-shadow();
+}
+.top-right {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 5px;
+    @include font-family($western: true);
+    font-size: 2.0em;
+    color: $dark-brown;
+    text-align: center;
+}
+.Change-level {
+    border: border($size:2px, $color: $dark-brown);
+    border-radius: $border-radius;
+    background-color: $light-brown;
+    color: $dark-brown;
+    font-size: .8em;
+    @include font-family($western: true)
+}
+.top-middle{
+    @include font-family($western: true);
+    font-size: 2.0em;
+    color: $dark-brown;
+    text-shadow: $font-shadow;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-left: 5vw;
+}
