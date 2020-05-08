@@ -8,6 +8,7 @@
 }
 .main-game-view > #gallows > img {
     margin: 5vh 0 0 5vw;
+    height: 30vh;
 }
 #word-to-guess {
     width: 90%;
@@ -56,4 +57,17 @@
     box-shadow: $btn-shadow;
     border-radius: $border-radius;
     cursor: pointer;
+}
+.letters-already-guessed{
+    height: 3vh;
+    width: 12%;
+    @include font-family($western: true);
+    text-transform: capitalize;
+    font-size: 1.55em;
+    background-color: gray;
+    color: $dark-brown;
+    border: border($size: 2px, $color: $dark-brown);
+    box-shadow: $btn-shadow;
+    border-radius: $border-radius;
+    cursor: default; 
 }

@@ -58,7 +58,7 @@ export default class SetPlayer extends Component {
     render(){
         return(
             <div>
-                {this.state.isPlayerSet ? <SetLevel playerName={this.state.playerName}/> : this.PlayerName()}
+                {this.state.isPlayerSet ? <SetLevel name={this.state.playerName}/> : this.PlayerName()}
             </div>
         );
     }  

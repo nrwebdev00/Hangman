@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import TopSection from './topSection';
+
+import SetLevel from './setLevel';
 import { levelOneWord, levelTwoWord, levelThreeWord } from './randomWord'
 import RenderGame from './renderGame';
 
@@ -12,9 +13,11 @@ export default class DisplayGame extends Component{
         this.state = {
             Word: '',
             numberWrong: 0,
-            guessed: new Set()
+            guessed: new Set(),
+            changeLevel: false
         }
         this.handleGuess = this.handleGuess.bind(this);
+        this.handleChangeLevel = this.handleChangeLevel.bind(this);
     }
     componentDidMount(){
         this.generateWord(this.props.level);
@@ -27,7 +30,11 @@ export default class DisplayGame extends Component{
             numberWrong: st.numberWrong + (st.Word.includes(ltr) ? 0 : 1)
         }))
     }
-
+    handleChangeLevel(){
+        this.setState({
+            changeLevel: true
+        })
+    }
     generateWord = (level) => {
        if(level == 'level-1'){
            this.setState({
@@ -50,23 +57,31 @@ export default class DisplayGame extends Component{
             <button
                 key={letter}
                 value={letter}
-                className="letters-guess"
+                className={this.state.guessed.has(letter) ? "letters-already-guessed" : "letters-guess"}
                 onClick={this.handleGuess}
-                // add disabled to hide when letter is guessed
+                disabled={this.state.guessed.has(letter)}
             >
                 {letter}
             </button>
         ));
     }
-
-    render(){
-        let letters = this.generateLetter();
+    displayGameRender(){
+        let letters = this.generateLetter()
         return(
             <div>
-                <TopSection 
-                    name={this.props.name} 
-                    level={this.props.level}
-                />
+                <div className='top-section'>
+                    <div className="top-left">
+                        <h3>Welcome</h3>
+                        <h3>{this.props.name}</h3>
+                    </div>
+                    <div className="top-middle">
+                        <h1>HangMan</h1>
+                    </div>
+                    <div className="top-right">
+                        <h3>Playing {this.props.level}</h3>
+                        <button className='Change-level' onClick={this.handleChangeLevel}>Click Here to Change Level</button>
+                    </div>
+                </div>
                 <RenderGame 
                     word={this.state.Word} 
                     numberWrong={this.state.numberWrong} 
@@ -75,6 +90,14 @@ export default class DisplayGame extends Component{
                 <div className='action-letters'>
                     {letters}
                 </div>
+            </div>
+        )
+    }
+
+    render(){
+        return(
+            <div>
+                {this.state.changeLevel ? <SetLevel name={this.props.name}/> : this.displayGameRender()}
             </div>
         )
     }

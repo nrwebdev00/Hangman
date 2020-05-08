@@ -21,7 +21,7 @@ export default class SetLevel extends Component{
     level = () => {
         return(
             <div className="change-level-wrapper">
-            <h2>Welcome {this.props.playerName}</h2>
+            <h2>Welcome {this.props.name}</h2>
             <h2>Please Choose a Level</h2>
             <div className="level-btn-wrapper">
                 <button className="level-button btn" onClick={this.changeLevel} value="level-1">Level 1</button>
@@ -35,7 +35,7 @@ export default class SetLevel extends Component{
     render(){
         return(
           <div>
-              {this.state.isLevelSet ? <DisplayGame name={this.props.playerName} level={this.state.Level}/> : this.level()}
+              {this.state.isLevelSet ? <DisplayGame name={this.props.name} level={this.state.Level}/> : this.level()}
           </div>
         );
     }

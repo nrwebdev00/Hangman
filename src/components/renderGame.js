@@ -17,13 +17,16 @@ export default class RenderGame extends Component {
         super(props);
 
     }
+    
     renderWordToGuess(){
         return this.props.word
             .split("")
             .map(letter =>{
                 if(this.props.guessed.has(letter)){
                     return(
-                        <div className="guessed-letter" >
+                        <div 
+                            className="guessed-letter"
+                        >
                             {letter}
                         </div>
                     )
@@ -40,7 +43,7 @@ export default class RenderGame extends Component {
         return(
             <div className="main-game-view">
                 <div id="gallows">
-                    <img src={this.props.images[(this.props.numberWrong )]} />
+                    <img src={this.props.images[(this.props.numberWrong - 1 )]} />
                 </div>
                 <div id="word-to-guess">
                     {this.renderWordToGuess()}
