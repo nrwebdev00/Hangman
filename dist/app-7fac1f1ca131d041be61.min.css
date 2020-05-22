@@ -1,0 +1,296 @@
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  overflow-x: hidden;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hidden {
+  display: none;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  width: 92.5%;
+  height: 10vh;
+  background-color: #924a36;
+  color: #D9D7C7;
+  border: 4px solid #3A160E;
+  border-radius: 25px;
+  font-family: 'Rye', cursive;
+  letter-spacing: 2px;
+  font-weight: 100;
+  font-size: 3.5em;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.game-screen-wrapper {
+  width: 85vw;
+  height: 85vh;
+  margin-top: 5vh;
+  padding: 10px;
+  border: 3px solid #3A160E;
+  border-radius: 25px;
+  box-shadow: 4px 4px 6px rgba(58, 22, 14, 0.65);
+  background-image: url(/static/assets/img/desert_back_ground.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.enter-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#players-name-enter {
+  width: 45vw;
+  margin: 15vh 0 0 30vw;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  align-items: center;
+}
+
+.player-name-label-wrapper {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  height: 12.5vh;
+}
+
+.player-name-label {
+  font-family: 'Rye', cursive;
+  letter-spacing: 2px;
+  font-weight: 100;
+  font-size: 4em;
+  color: #3A160E;
+}
+
+.player-name-input-wrapper > input {
+  width: 90%;
+  height: 7vh;
+  border: 4px solid #3A160E;
+  border-radius: 25px;
+  padding: 4px 4px 4px 10px;
+  font-size: 3.0em;
+  font-family: 'Abril Fatface', cursive;
+  letter-spacing: 3px;
+}
+
+.player-name-btn-wrapper > button {
+  width: 92.5%;
+  height: 10vh;
+  background-color: #924a36;
+  color: #D9D7C7;
+  border: 4px solid #3A160E;
+  border-radius: 25px;
+  font-family: 'Rye', cursive;
+  letter-spacing: 2px;
+  font-weight: 100;
+  font-size: 3.5em;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.player-name-btn-wrapper > button:hover {
+  color: #3A160E;
+}
+
+.error-message {
+  font-family: 'Abril Fatface', cursive;
+  letter-spacing: 3px;
+  font-size: 2.5em;
+  color: #924a36;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.change-level-wrapper {
+  width: 45vw;
+  margin: 15vh 0 0 37vw;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 5vh;
+  align-items: center;
+}
+
+.change-level-wrapper > h2 {
+  font-family: 'Rye', cursive;
+  letter-spacing: 2px;
+  font-weight: 100;
+  font-size: 4em;
+  text-shadow: 1px 1px 2px rgba(58, 22, 14, 0.65);
+  color: #3A160E;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.level-btn-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vh 2vw 0 2vw;
+}
+
+.top-left {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  font-family: 'Rye', cursive;
+  letter-spacing: 2px;
+  font-weight: 100;
+  font-size: 2.0em;
+  text-align: center;
+  color: #3A160E;
+  text-shadow: 1px 1px 2px rgba(58, 22, 14, 0.65);
+}
+
+.top-right {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 5px;
+  font-family: 'Rye', cursive;
+  letter-spacing: 2px;
+  font-weight: 100;
+  font-size: 2.0em;
+  color: #3A160E;
+  text-align: center;
+}
+
+.Change-level {
+  border: 2px solid #3A160E;
+  border-radius: 25px;
+  background-color: #C3976A;
+  color: #3A160E;
+  font-size: .8em;
+  font-family: 'Rye', cursive;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+
+.top-middle {
+  font-family: 'Rye', cursive;
+  letter-spacing: 2px;
+  font-weight: 100;
+  font-size: 2.0em;
+  color: #3A160E;
+  text-shadow: 1px 1px 2px rgba(58, 22, 14, 0.65);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-left: 5vw;
+}
+
+.main-game-view {
+  width: 45vw;
+  height: 52vh;
+  margin-left: 37vw;
+}
+
+.main-game-view > #gallows > img {
+  margin: 5vh 0 0 5vw;
+  height: 30vh;
+}
+
+#word-to-guess {
+  width: 90%;
+  height: 7vh;
+  margin: 1vh 0 0 5vh;
+}
+
+#word-to-guess {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 8vh;
+}
+
+.not-guessed-letter {
+  max-width: 4vw;
+  width: 100%;
+  border-bottom: 2px solid #3A160E;
+  margin-right: 2px;
+}
+
+.guessed-letter {
+  font-family: 'Rye', cursive;
+  letter-spacing: 2px;
+  font-weight: 100;
+  font-size: 3.0em;
+  text-transform: uppercase;
+  border-bottom: 2px solid #3A160E;
+}
+
+.action-letters {
+  width: 45vw;
+  height: 22vh;
+  margin: 3vh 0 0 37vw;
+}
+
+.action-letters {
+  height: 17vh;
+  width: 55%;
+  margin: 1vh 0 0 42%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.letters-guess {
+  height: 3vh;
+  width: 12%;
+  font-family: 'Rye', cursive;
+  letter-spacing: 2px;
+  font-weight: 100;
+  text-transform: capitalize;
+  font-size: 1.55em;
+  background-color: #AC714A;
+  color: #3A160E;
+  border: 2px solid #3A160E;
+  box-shadow: 2px 2px 4px rgba(58, 22, 14, 0.65);
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.letters-already-guessed {
+  height: 3vh;
+  width: 12%;
+  font-family: 'Rye', cursive;
+  letter-spacing: 2px;
+  font-weight: 100;
+  text-transform: capitalize;
+  font-size: 1.55em;
+  background-color: gray;
+  color: #3A160E;
+  border: 2px solid #3A160E;
+  box-shadow: 2px 2px 4px rgba(58, 22, 14, 0.65);
+  border-radius: 25px;
+  cursor: default;
+}
+
+/*# sourceMappingURL=app-2904f1c5b043a8c45001.map*/

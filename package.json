@@ -8,7 +8,9 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack/prod.config.js --progress --display-error-details --color",
     "heroku-postbuild": "npm run build",
     "precommit": "eslint src",
-    "prod": "NODE_ENV=production node server.js"
+    "prod": "NODE_ENV=production node server.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -30,11 +32,11 @@
   "bugs": {
     "url": "https://github.com/bottega-code-school/js-builder/issues"
   },
-  "homepage": "https://github.com/bottega-code-school/js-builder",
+  "homepage": "http://nrwebdev00.github.io/Hangman",
   "dependencies": {
     "ajv": "6.12.0",
-    "axios": "0.19.2",
     "autoprefixer": "^9.1.0",
+    "axios": "0.19.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^7.2.3",
@@ -53,6 +55,7 @@
     "express": "4.17.1",
     "extract-loader": "^2.0.1",
     "file-loader": "^1.1.11",
+    "gh-pages": "^2.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.13.1",
