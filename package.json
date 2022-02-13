@@ -34,7 +34,7 @@
   },
   "homepage": "http://nrwebdev00.github.io/Hangman",
   "dependencies": {
-    "ajv": "6.12.0",
+    "ajv": "6.12.3",
     "autoprefixer": "^9.1.0",
     "axios": "0.21.1",
     "babel-cli": "^6.26.0",
